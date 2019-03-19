@@ -86,7 +86,7 @@ void XKeysDevice::TurnOffLed(unsigned char ledNumber)
 {
 	unsigned char buf[36];
 	buf[0] = 0x0;
-	buf[1] = 186;
+	buf[1] = 179;
 	buf[2] = ledNumber;
 	buf[3] = 0;
 	hid_write(this->device, buf, 36);
@@ -96,7 +96,7 @@ void XKeysDevice::TurnOnLed(unsigned char ledNumber)
 {
 	unsigned char buf[36];
 	buf[0] = 0x0;
-	buf[1] = 186;
+	buf[1] = 179;
 	buf[2] = ledNumber;
 	buf[3] = 1;
 	hid_write(this->device, buf, 36);
@@ -106,7 +106,7 @@ void XKeysDevice::FlashLed(unsigned char ledNumber)
 {
 	unsigned char buf[36];
 	buf[0] = 0x0;
-	buf[1] = 186;
+	buf[1] = 179;
 	buf[2] = ledNumber;
 	buf[3] = 2;
 	hid_write(this->device, buf, 36);

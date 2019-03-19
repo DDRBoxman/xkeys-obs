@@ -1,5 +1,8 @@
 project(xkeys)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
+include_directories(SYSTEM "${CMAKE_SOURCE_DIR}/UI/obs-frontend-api")
+
 include_directories(hidapi)
 
 set(hidapi_HEADERS
@@ -39,6 +42,7 @@ add_library(xkeys MODULE
 
 target_link_libraries(xkeys
         ${hidapi_DEPS}
-        libobs)
+        libobs
+        obs-frontend-api)
 
 install_obs_plugin_with_data(xkeys data)
