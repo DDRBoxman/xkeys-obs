@@ -10,7 +10,10 @@ set(hidapi_HEADERS
 
 if (WIN32)
     set(hidapi_SOURCES
-            hidapi/windows/hid.c)
+            hidapi/windows/hid.c)    
+
+    set(hidapi_DEPS
+           Setupapi.lib)
 elseif(APPLE)
     set(hidapi_SOURCES
             hidapi/mac/hid.c)
